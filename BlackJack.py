@@ -1,17 +1,20 @@
 # python 3.7.4
-from lib.Deck import Deck
 from lib.Card import Card
 from lib.Dealer import Dealer
+from lib.Hand import Hand
 
-#
 if __name__ == "__main__":
     dealer = Dealer()
 
-    a = dealer.cards_left
-    b = dealer.number_of_deck
-    c = dealer.pool_dimension
+    dealer.shuffle()
 
-    d = dealer.pop_card()
+    dealer_hand = [Card(10, ""), Card("A", "")]
+    player_hand = []
 
-    for i in range(100):
-        d = dealer.pop_card()
+    dealer_hand = Hand(dealer_hand)
+    player_hand = Hand()
+
+    player_hand.add_card(dealer.pop_card())
+    player_hand.add_card(dealer.pop_card())
+
+    pass

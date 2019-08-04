@@ -27,12 +27,10 @@ class Dealer:
         if times <= 0:
             return
 
-        remaining_cards = len(self)
-
         # switch 2 random cards n times
         for i in range(times):
-            a = random.randint(0, remaining_cards - 1)
-            b = random.randint(0, remaining_cards - 1)
+            a = random.randint(0, self.cards_left - 1)
+            b = random.randint(0, self.cards_left - 1)
             self._pool[a], self._pool[b] = self._pool[b], self._pool[a]
 
     def pop_card(self):
