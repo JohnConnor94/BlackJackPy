@@ -38,11 +38,14 @@ class Dealer:
         Get the card and removes it from the deck
         :return (value,seed) if position is valid else it returns None
         """
-        position = 0
-        card = self._watch_card(position)
-        if card:
-            self._pool.pop(position)  # using list method to remove the first one
-        return card
+        if self.cards_left > 0:
+            return self._pool.pop()
+        #
+        # position = 0
+        # card = self._watch_card(position)
+        # if card:
+        #     self._pool.pop(position)  # using list method to remove the first one
+        # return card
 
     def _watch_card(self, position = 0):
         """

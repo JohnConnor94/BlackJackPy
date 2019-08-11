@@ -39,3 +39,9 @@ class Hand:
             return True
         else:
             return False
+
+    def __str__(self) -> str:
+        s = ""
+        for x in self._cards:
+            s += x.value + " "
+        return s
